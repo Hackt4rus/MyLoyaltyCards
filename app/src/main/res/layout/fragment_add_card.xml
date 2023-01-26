@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddCardFragment">
+
+    <EditText
+        android:id="@+id/company_name_text_view"
+        android:layout_width="317dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:hint="Company Name"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Logo (optional)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/color_button" />
+
+    <EditText
+        android:id="@+id/client_code_text_view"
+        android:layout_width="317dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:hint="Client Code"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/company_name_text_view" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="122dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="40dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/logo_button"
+        android:layout_width="188dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#D2CECE"
+        android:src="@android:drawable/ic_menu_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="323dp"
+        android:layout_height="100dp"
+        android:checkedButton="@id/bar_code_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/client_code_text_view">
+
+        <RadioButton
+            android:id="@+id/bar_code_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Bar code"
+            app:buttonTint="#00BCD4" />
+
+        <RadioButton
+            android:id="@+id/qr_code_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="QR code"
+            app:buttonTint="#00BCD4" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/color_button"
+        android:layout_width="180dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:text="Select Color"
+        app:backgroundTint="#D2CECE"
+        app:layout_constraintBottom_toTopOf="@+id/save_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.058" />
+
+    <ImageView
+        android:id="@+id/add_logo_image_view"
+        android:layout_width="94dp"
+        android:layout_height="51dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toEndOf="@+id/logo_button"
+        app:layout_constraintTop_toTopOf="@+id/logo_button" />
+
+    <ImageView
+        android:id="@+id/add_color_image_view"
+        android:layout_width="38dp"
+        android:layout_height="36dp"
+        android:background="#FFFFFF"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/color_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toEndOf="@+id/color_button"
+        app:layout_constraintTop_toTopOf="@+id/color_button"
+        app:layout_constraintVertical_bias="0.45" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

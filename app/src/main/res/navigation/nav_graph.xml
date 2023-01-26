@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.myloyaltycards_last.ListFragment"
+        android:label="My Loyalty Cards"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_FirstFragment_to_addCardFragment2"
+            app:destination="@id/addCardFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <argument
+            android:name="cardToSend"
+            app:argType="com.example.myloyaltycards_last.model.Card"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCardFragment"
+        android:name="com.example.myloyaltycards_last.AddCardFragment"
+        android:label="Add Card"
+        tools:layout="@layout/fragment_add_card">
+        <action
+            android:id="@+id/action_addCardFragment_to_FirstFragment2"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.myloyaltycards_last.DetailsFragment"
+        android:label="Card Details">
+        <argument
+            android:name="cardToShow"
+            android:defaultValue="@null"
+            app:argType="com.example.myloyaltycards_last.model.Card"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_detailsFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+</navigation>
